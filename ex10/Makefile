@@ -9,17 +9,17 @@ CFLAGS			+= -Iinclude
 
 SRCS				:= $(wildcard src/*.c)
 
-SRCS_TEST		:= $(wildcard src/input.c src/parse.c src/game_logic.c test/main.c)
+SRCS_TEST		:= $(wildcard src/ src/parse.c test/main_parse.c)
 
 SRCS_STR		:= $(wildcard src/my_string.c test/main_str.c)
 
-OBJS				:= $(SRCS:.c=.o)
+OBJS				:= $(SRCS_TEST:.c=.o)
 
 OBJS_TEST   := $(SRCS_TEST:.c=.o)
 
 OBJS_STR    := $(SRCS_STR:.c=.o)
 
-NAME				:= filler
+NAME				:= vp_filler
 
 NAME_TEST   := filler_test
 

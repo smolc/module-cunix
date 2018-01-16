@@ -1,31 +1,55 @@
 #include <stdlib.h>
 
-char* my_itoa(int nmb){
-  int base = 10;
-  int max_length = 12;
-  int i = 0;
-  int j = 0;
-  int positive = (nmb < 0 ? -1 : 1);
-  char* str = (char*)malloc(max_length);
-  char* res = (char*)malloc(max_length);
-  if(nmb == 0){
-    *str = '0';
-    *(str + 1) = '\0';
-    return str;
+char   *str(const char *str)
+{
+  char	*rts;
+  int	i;
+
+  i = -1;
+  while (str[++i]);
+  if (!(rts = (char*)malloc(i + 1)))
+    return (0);
+  i = 0;
+  while (str[i] != '\0')
+  {
+    rts[i] = str[i];
+    i++;
   }
-  nmb = nmb*positive;
-  while(nmb){
-    *(str + (i++)) = '0' + nmb%base;
-    nmb /= base;
+  rts[i] = '\0';
+  return (rts);
+}
+
+static int   len(int n, int sign)
+{
+  int l;
+
+  l = 0;
+  while (n /= 10)
+    l++;
+  l += sign;
+  return (l);
+}
+
+char   *my_itoa(int n)
+{
+  int l, sign;
+  char *s;
+
+  sign = 0;
+  if (n == -2147483648)
+    return (str("-2147483648"));
+  if (n < 0)
+    sign = 1, n = -n;
+  l = len(n, sign) + 2;
+  if ((s = (char*)malloc(sizeof(char) * (l))) == NULL)
+    return (0);
+  s[--l] = '\0';
+  while (l--)
+  {
+    s[l] = n % 10 + '0';
+    n /= 10;
   }
-  if(positive < 0){
-    *res = '-';
-    j++;
-  }
-  *(res + (i--)) = '\0';
-  while(i >= 0){
-    *(res + j) =* (str + i);
-     i--, j++ ;
-  }
-  return res;
- }
+  if (sign)
+    s[0] = '-';
+  return (s);
+}

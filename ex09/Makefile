@@ -3,9 +3,9 @@ CC					:= gcc
 
 RM					:= rm -rf
 
-LDFLAGS			+= -L../ex07 -llinked_list
+LDFLAGS     += -Llib
 
-CFLAGS			+= -Iinclude -I../ex07/include
+CFLAGS      += -Iinclude -g
 
 SRCS				:= $(wildcard src/*.c)
 

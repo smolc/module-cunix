@@ -28,7 +28,7 @@ int check_connection(map_t *map, elem_t *new_elem, pos_t p, char symbol)
     for(int j = 0; j < new_elem->w; j++)
       if(new_elem->array[i][j] != '.')
       {
-        if(i+p.y+1 < map->h && map->array[i+p.y+1][j+p.x] == symbol)
+        if (i+p.y+1 < map->h && map->array[i+p.y+1][j+p.x] == symbol)
             return 0;
         if (i+p.y-1 >= 0 && map->array[i+p.y-1][j+p.x] == symbol)
             return 0;
@@ -43,8 +43,8 @@ int check_connection(map_t *map, elem_t *new_elem, pos_t p, char symbol)
 int check_rules(map_t *map, elem_t *new_elem, pos_t p, player_t *player)
 {
   if (check_free_space(map, new_elem, p) == 0 &&
-      check_connection(map, new_elem, p, player->symbol) == 0)
-      return 0;
+    check_connection(map, new_elem, p, player->symbol) == 0)
+    return 0;
   return -1;
 }
 
@@ -55,8 +55,8 @@ int insert_elem(map_t *map, elem_t *new_elem, pos_t p, player_t *player)
     return -1;
   else{
     for (int i = 0; i < new_elem->h; i++)
-      for(int j = 0; j < new_elem->w; j++)
-        if(new_elem->array[i][j] == '*')
+      for (int j = 0; j < new_elem->w; j++)
+        if (new_elem->array[i][j] == '*')
           map->array[i+p.y][j+p.x] = player->symbol;
   }
   return 0;

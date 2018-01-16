@@ -4,11 +4,6 @@
 typedef struct  hashtable {
   unsigned int  size;
   void          **table;
-  // int           backend_type; //0 noop for test, 1 linkedlist, 2 tree
-  //void          (*fcreate)();
-  //void          (*fseek)(char *key);
-  //void          (*fdestroy)();
-  //void          (*fhash)(char *k);
 }               hashtable_t;
 
 hashtable_t     *hash_create(unsigned int size);

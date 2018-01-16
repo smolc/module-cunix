@@ -13,4 +13,3 @@ int          main(int argc, char **argv)
   destroy_core(&vm);
   return 0;
 }
-

@@ -1,4 +1,3 @@
-
 int         test_check_rules_enough_free_space_empty();
 int         test_check_rules_enough_free_space();
 int         test_check_rules_connection_first_step();

@@ -72,4 +72,3 @@ int     exec_players_pool(vmcore_t *vm);
 int     kill_players_pool(vmcore_t *vm);
 void    start_game(vmcore_t *vm);
 #endif  /* VM_FILLER_H_ */
-

@@ -17,5 +17,3 @@ int        get_color (int i)
 {
   return i+1;
 }
-
-
