@@ -1,6 +1,11 @@
 #ifndef MINISHELL_H
 #define MINISHELL_H
-#include <stdlib.h>
+
+#define RL_BUFFSIZE 1024
+#define TOK_BUFFSIZE 64
+#define TOK_DELIM " \t\r\n\a"
+
+#include "functions.h"
 /*                                    Hints
  * Use "$_>" for prompt
  *
