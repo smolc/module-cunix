@@ -5,7 +5,7 @@ RM					:= rm -rf
 
 LDFLAGS				+= -L../ex07 -llinked_list
 
-CFLAGS				+= -Iinclude -I../ex07/include -Wall -Wextra -Werror -g
+CFLAGS				+= -Iinclude -I../ex07/include
 
 SRCS				:= $(wildcard src/*.c)
 

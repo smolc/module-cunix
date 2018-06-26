@@ -115,4 +115,3 @@ void signal_handler(int sign) {
 		signal(SIGINT, signal_handler);
 	}
 }
-

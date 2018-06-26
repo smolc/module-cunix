@@ -20,6 +20,5 @@ int mini_exit(hashtable_t *ht, char **args);
 int mini_help(hashtable_t *ht, char **args);
 
 void signal_handler(int sign);
-
 #endif
 

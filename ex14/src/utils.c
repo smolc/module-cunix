@@ -3,7 +3,7 @@
 
 void  fail(char *err, int code)
 {
-  dprintf(2, err);
+  dprintf(2, "%s ", err);
   exit(code);
 }
 

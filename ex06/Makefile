@@ -5,7 +5,7 @@ RM					:= rm -rf
 
 LDFLAGS				+= -Llib
 
-CFLAGS				+= -Iinclude -Wall -Wextra -Werror -g
+CFLAGS				+= -Iinclude
 
 SRCS				:= $(wildcard src/*.c)
 
@@ -16,7 +16,7 @@ NAME				:= printf_test
 all:				$(NAME)
 
 $(NAME):			$(OBJS)
-						$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LDFLAGS)
+						$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LDFLAGS) -lm
 
 clean:
 						$(RM) $(OBJS)
